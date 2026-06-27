@@ -1,0 +1,24 @@
+{
+  "name": "vite-tsx-editor-workspace",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "workspaces": [
+    "editor",
+    "pages-site"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w pages-site\" \"npm run dev -w editor\"",
+    "build": "npm run build -w editor && npm run build -w pages-site"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "@langchain/core": "^1.2.1",
+    "@langchain/langgraph": "^1.4.7",
+    "@langchain/openai": "^1.5.3",
+    "deepagents": "^1.10.5",
+    "langchain": "^1.5.2"
+  }
+}
